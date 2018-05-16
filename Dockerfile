@@ -61,8 +61,8 @@ RUN cd /usr/src && \
 #     ln -s /opt/samtools/bin/* /usr/bin/
 
 
-# needed for MGI data mounts
-RUN apt-get update && apt-get install -y libnss-sss && apt-get clean all
+# needed for MGI data mounts and timezone
+RUN apt-get update && apt-get install -y libnss-sss tzdata && apt-get clean all
 
 #set timezone to CDT
 #LSF: Java bug that need to change the /etc/timezone.
